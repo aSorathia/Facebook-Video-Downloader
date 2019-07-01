@@ -1,0 +1,42 @@
+{
+    "manifest_version":2,
+    "name":"Multi",
+    "version":"1.0",
+    "description":"",
+
+    "icons":{
+        "128":"icon128.png",
+        "48":"icon48.png",
+        "16":"icon16.png"
+    },
+
+    "options_page":"options.html",
+
+    "background":{
+        "scripts":["eventPage.js"],
+        "persistenet":false
+    },
+
+    "page_action":{
+		"default_icon":"icon16.png",
+		"default_popup":"popup.html",
+		"default_title":""        
+	},
+
+    "content_scripts":[
+		{
+			"matches":[
+                "*://www.google.com/*",
+                 "*://www.google.co.in/*",
+                 "*://www.facebook.com/*"],
+			"js":["jquery-3.1.1.js","content.js"],
+			"css":["content.css"]
+		}
+	],
+
+    "permissions":[
+		"tabs",
+		"contextMenus",
+        "downloads"
+	]
+}
